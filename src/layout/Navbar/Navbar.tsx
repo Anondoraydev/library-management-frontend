@@ -1,19 +1,21 @@
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router";
-import logo from "./../../../public/book logo.png"
+import { Link, NavLink } from "react-router-dom";
+import logo from "./../../../public/book logo.png";
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-50">
+    <nav className="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-50 shadow">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 group">
-          <img className="w-16" src={logo} alt="" />
-          <span className="text-4xl font-bold text-cyan-500 transition-all duration-300">
-            LMS
-          </span>
+          <img
+            className="w-16 transition-transform duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-105"
+            src={logo}
+            alt="Logo"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -21,10 +23,10 @@ const Navbar = () => {
           <NavLink
             to="/books"
             className={({ isActive }) =>
-              `px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+              `px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800 shadow-inner"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
@@ -33,10 +35,10 @@ const Navbar = () => {
           <NavLink
             to="/create-book"
             className={({ isActive }) =>
-              `px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+              `px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800 shadow-inner"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
@@ -45,10 +47,10 @@ const Navbar = () => {
           <NavLink
             to="/borrow-summary"
             className={({ isActive }) =>
-              `px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+              `px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800 shadow-inner"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
@@ -56,10 +58,10 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 focus:outline-none"
         >
           <Menu className="w-6 h-6" />
         </button>
@@ -67,9 +69,9 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 ${
+        className={`md:hidden transition-all duration-300 ease-in-out ${
           mobileOpen
-            ? "max-h-96 opacity-100 pt-4"
+            ? "max-h-96 opacity-100 pt-3"
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
@@ -78,10 +80,10 @@ const Navbar = () => {
             to="/books"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 text-sm font-medium ${
+              `block px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800"
-                  : "text-gray-700 hover:bg-gray-100"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
@@ -91,10 +93,10 @@ const Navbar = () => {
             to="/create-book"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 text-sm font-medium ${
+              `block px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800"
-                  : "text-gray-700 hover:bg-gray-100"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
@@ -104,10 +106,10 @@ const Navbar = () => {
             to="/borrow-summary"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 text-sm font-medium ${
+              `block px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                 isActive
                   ? "bg-cyan-100 text-cyan-800"
-                  : "text-gray-700 hover:bg-gray-100"
+                  : "text-gray-700 hover:bg-cyan-50 hover:text-cyan-900"
               }`
             }
           >
