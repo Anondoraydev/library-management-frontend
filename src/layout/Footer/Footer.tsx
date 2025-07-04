@@ -1,5 +1,5 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { CgFacebook, CgWebsite } from "react-icons/cg";
+import { CgFacebook } from "react-icons/cg";
 import { Link } from "react-router";
 
 const Footer = () => {
@@ -36,25 +36,19 @@ const Footer = () => {
         <div className="flex items-center flex-wrap gap-[10px] text-[#424242]">
           <a
             className="text-[1.3rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
-            href="https://www.facebook.com/ansarulislamriyad"
+            href="https://www.facebook.com/anondo554.0"
           >
             <CgFacebook />
           </a>
           <a
             className="text-[1.2rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
-            href="https://ansarul-islam-portfolio.netlify.app"
-          >
-            <CgWebsite />
-          </a>
-          <a
-            className="text-[1.2rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
-            href="https://github.com/AnsarulIslam10"
+            href="https://github.com/Anondoraydev"
           >
             <BsGithub />
           </a>
           <a
             className="text-[1.2rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
-            href="https://www.linkedin.com/in/ansarul-islam10"
+            href="https://www.linkedin.com/in/anondo554"
           >
             <BsLinkedin />
           </a>
