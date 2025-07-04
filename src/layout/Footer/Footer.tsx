@@ -4,61 +4,85 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-50 mt-6 dark:bg-slate-900 boxShadow rounded-xl w-full p-6 md:p-9">
-      <div className="flex justify-center gap-[30px] flex-wrap w-full sm:px-32">
-        <div className="flex justify-center sm:justify-between gap-[30px] w-full flex-wrap">
+    <footer className="relative bg-gradient-to-br from-cyan-100 via-white to-cyan-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-t-3xl shadow-2xl overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center space-y-8">
+        {/* Logo & Name */}
+        <Link to="/" className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
+            L
+          </div>
+          <span className="text-xl font-semibold text-gray-700 dark:text-gray-200 tracking-wider">
+            Library System
+          </span>
+        </Link>
+
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-6 text-gray-600 dark:text-gray-400 text-sm font-medium">
           <Link
-            to={"/"}
-            className="text-[0.9rem] dark:text-[#abc2d3] text-[#424242] hover:text-[#3B9DF8] cursor-pointer transition-all duration-200"
+            to="/"
+            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
           >
             Home
           </Link>
           <Link
-            to={"/books"}
-            className="text-[0.9rem] dark:text-[#abc2d3] text-[#424242] hover:text-[#3B9DF8] cursor-pointer transition-all duration-200"
+            to="/books"
+            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
           >
             All Books
           </Link>
           <Link
-            to={"/create-book"}
-            className="text-[0.9rem] dark:text-[#abc2d3] text-[#424242] hover:text-[#3B9DF8] cursor-pointer transition-all duration-200"
+            to="/create-book"
+            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
           >
-            Add Books
+            Add Book
           </Link>
           <Link
-            to={"/borrow-summary"}
-            className="text-[0.9rem] dark:text-[#abc2d3] text-[#424242] hover:text-[#3B9DF8] cursor-pointer transition-all duration-200"
+            to="/borrow-summary"
+            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
           >
             Borrow Summary
           </Link>
         </div>
 
-        <div className="flex items-center flex-wrap gap-[10px] text-[#424242]">
+        {/* Social Icons */}
+        <div className="flex space-x-5">
           <a
-            className="text-[1.3rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
             href="https://www.facebook.com/anondo554.0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-white dark:bg-slate-700 text-cyan-600 dark:text-cyan-400 shadow hover:scale-110 hover:bg-cyan-500 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-white transition-all duration-500"
           >
-            <CgFacebook />
+            <CgFacebook size={20} />
           </a>
           <a
-            className="text-[1.2rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
             href="https://github.com/Anondoraydev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 shadow hover:scale-110 hover:bg-gray-800 hover:text-white transition-all duration-500"
           >
-            <BsGithub />
+            <BsGithub size={20} />
           </a>
           <a
-            className="text-[1.2rem] p-1.5 cursor-pointer rounded-full hover:text-white hover:bg-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300"
             href="https://www.linkedin.com/in/anondo554"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-white dark:bg-slate-700 text-blue-700 dark:text-blue-400 shadow hover:scale-110 hover:bg-blue-600 hover:text-white transition-all duration-500"
           >
-            <BsLinkedin />
+            <BsLinkedin size={20} />
           </a>
         </div>
 
-        <div className="border-t dark:border-slate-700 border-gray-200 pt-[20px] flex items-center w-full flex-wrap gap-[20px] justify-center">
-          <p className="text-[0.8rem] dark:text-slate-500 sm:text-[0.9rem] text-gray-600 text-center">
-            © 2025 Library Management System. All Rights Reserved.{" "}
-          </p>
-        </div>
+        {/* Divider */}
+        <div className="w-full border-t border-gray-200 dark:border-slate-600"></div>
+
+        {/* Copyright */}
+        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+          © 2025{" "}
+          <span className="font-semibold text-cyan-700 dark:text-cyan-400">
+            Library System
+          </span>
+          . All rights reserved.
+        </p>
       </div>
     </footer>
   );
